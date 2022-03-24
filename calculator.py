@@ -76,8 +76,8 @@ wavelength, depth, error = np.loadtxt('data/hat-p-41-depths.dat', unpack = True,
 depth = (depth / 100. ) * 1e6
 error = (error / 100. ) * 1e6
 
-# Divide errors by sqrt(2) because two visits were used originally:
-error = error / np.sqrt(2)
+# Multiply errors by sqrt(2) because two visits were used originally:
+error = error * np.sqrt(2)
 
 # Now save in machine readable format:
 fout = open('simulated_errors.dat', 'w')
